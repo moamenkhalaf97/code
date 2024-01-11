@@ -1,0 +1,113 @@
+#include <iostream>
+#include <stdlib.h>
+#include <string.h>
+using namespace std;
+class Bank {
+public:
+	void set_value()
+	{
+	
+	}
+	void show_data()
+	{
+		
+	}
+	void deposit()
+	{
+		
+	}
+	void view_balance()
+	{
+	   
+	}
+	void withdraw()
+	{
+	
+	}
+private:
+	string name;
+	int account_number;
+	char type[10];
+	int amount = 0;
+	int total_balance = 0;
+};
+int main()
+{
+	Bank b;
+	int choice;
+	while (1) {
+		cout << "\n~~~~~~~~~~~~~~~~~~~~~~~~~~"
+			<< "~~~WELCOME~~~~~~~~~~~~"
+			<< "~~~~~~~~~\n\n";
+		cout << "Enter Your Choice\n";
+		cout << "\t1. Enter name, Account "
+			<< "number, Account type\n";
+		cout << "\t2. Balance Enquiry\n";
+		cout << "\t3. Deposit Money\n";
+		cout << "\t4. Show Total balance\n";
+		cout << "\t5. Withdraw Money\n";
+		cout << "\t6. Cancel\n";
+		cin >> choice;
+		switch (choice) {
+		case 1:
+			b.set_value();
+			break;
+		case 2:
+			b.show_data();
+			break;
+		case 3:
+			b.deposit();
+			break;
+		case 4:
+			b.view_balance();
+			break;
+		case 5:
+			b.withdraw();
+			break;
+		case 6:
+			exit(1);
+			break;
+		default:
+			cout << "\nInvalid choice\n";
+		}
+	}
+}
+void Bank::set_value()
+	{
+		cout << "Enter name\n";
+		cin.ignore();
+		getline(cin, name);
+
+
+		cout << "Enter Account number\n";
+		cin >> account_number;
+		cout << "Enter Account type\n";
+		cin >> type;
+		cout << "Enter Balance\n";
+		cin >> total_balance;
+	}
+	void Bank::show_data()
+	{
+		cout << "Name:" << name << endl;
+		cout << "Account No:" << account_number<< endl;
+		cout << "Account type:" << type << endl;
+		cout << "Balance:" << total_balance << endl;
+	}
+	void Bank::deposit()
+	{
+		cout << "\nEnter amount to be Deposited\n";
+		cin >> amount;
+	}
+	void Bank::view_balance()
+	{
+	    total_balance = total_balance + amount;
+		cout << "\nTotal balance is: " << total_balance;
+	}
+	void Bank::withdraw()
+	{
+		int withdraw_amount, available_balance;
+		cout << "Enter amount to withdraw\n";
+		cin >> withdraw_amount;
+		available_balance= total_balanace - withdraw_amount;
+		cout << "Available Balance is" << available_balance;
+	}
